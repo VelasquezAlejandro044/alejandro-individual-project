@@ -1,37 +1,11 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 import os
 from env import host, user, password
-
-# imports
-import numpy as np
-import pandas as pd
-
-from datetime import datetime
-from sklearn.metrics import mean_squared_error
-from math import sqrt
-
-import matplotlib.pyplot as plt
-%matplotlib inline
-import seaborn as sns
-from pandas.plotting import register_matplotlib_converters
-
-import statsmodels.api as sm
-from statsmodels.tsa.api import Holt
-
-# Ignore warnings
-import warnings
-warnings.filterwarnings("ignore")
-
-# supress scientific notation
-# np.set_printoptions(suppress=True)
-plt.rcParams["axes.formatter.limits"] = (-5, 12)
-# pd.options.display.float_format = '{:.2f}'.format
-
-# plt.style.use('seaborn-whitegrid')
-plt.rc('figure', figsize=(13, 7))
-plt.rc('font', size=16)
-plt.style.use('fivethirtyeight')
+import env
 
 
 ################################################################
@@ -40,6 +14,7 @@ plt.style.use('fivethirtyeight')
 
 
 def get_walmart_data():
+    # find data locally
     if os.path.isfile('Walmart.csv') == False:
         print("Data is not cached. Acquiring new power data.")
         df = new_power_data()
@@ -49,9 +24,12 @@ def get_walmart_data():
     print("Acquisition complete")
     return df
 
+################################################################
+# Prepare
+################################################################
 
-def new_walmart_data():
-    df = pd.read_csv("Walmart.csv")
+
+def new_walmart_data(df):
     
     # Chanege CPI for Consumer Price Index
     df.rename(columns={'CPI':'Consumer_Price_Index'}, inplace=True)
@@ -67,4 +45,27 @@ def new_walmart_data():
     
     return df
 
+################################################################
+# Split into train and test
+################################################################
 
+def split_walmart_data(df):
+    # Use percentage methodes to split
+    train_size = .60
+    n = df.shape[0]
+    test_start_index = round(train_size * n)
+    
+    train = df[:test_start_index] # everything up (not including) to the test_start_index
+    test = df[test_start_index:] # everything from the test_start_index to the end
+    
+    # eliminate all variables from train and test exept target 
+    train = pd.DataFrame(train['weekly_sales'])
+    test = pd.DataFrame(test['weekly_sales'])
+    
+    return train, test
+#     plt.plot(train.index, train.weekly_sales)
+#     plt.plot(test.index, test.weekly_sales)
+
+
+
+    
