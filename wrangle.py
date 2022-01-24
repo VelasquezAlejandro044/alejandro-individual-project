@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 import os
-from env import host, user, password
-import env
-
 
 ################################################################
 # Acquire
