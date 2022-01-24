@@ -37,7 +37,7 @@ def new_walmart_data(df):
     # Turn the name of the columns to lower case characters
     df.columns= df.columns.str.lower()
 
-    # Convert our date column from object type to DateTime type and trains kernel to know proper order of date 
+# Convert our date column from object type to DateTime type and trains kernel to know proper order of date 
     df.date = pd.to_datetime(df.date, format='%d-%m-%Y')  
 
     # Set the date as index
@@ -63,8 +63,6 @@ def split_walmart_data(df):
     test = pd.DataFrame(test['weekly_sales'])
     
     return train, test
-#     plt.plot(train.index, train.weekly_sales)
-#     plt.plot(test.index, test.weekly_sales)
 
 
 

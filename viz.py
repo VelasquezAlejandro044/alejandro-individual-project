@@ -27,7 +27,6 @@ plt.style.use('fivethirtyeight')
 # Plot split data 
 ################################################################
 
-
 def plot_split(train, test): 
     # It joins and graphs the train and test data sets together  
     plt.plot(train.index, train.weekly_sales)
@@ -63,3 +62,17 @@ def week_month_quarter_running_average(y):
     y.resample('M').mean().plot(label='Montly')
     y.resample('3M').mean().plot(label='Quarterly')
     plt.legend()
+
+
+################################################################
+# Modeling vizuals
+################################################################
+
+def plot_samples(train, test, target_var):
+    '''
+    This function will plot the train and test values for a single variable across all dates. 
+    '''
+    plt.figure(figsize=(12,4))
+    plt.plot(train[target_var])
+    plt.plot(test[target_var])
+    plt.title(target_var)
