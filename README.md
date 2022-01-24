@@ -54,3 +54,5 @@ It helps with the creation and visualization of models
 ### Data set to recreate 
 https://github.com/VelasquezAlejandro044/alejandro-individual-project/blob/main/Walmart.csv
 
+Walmart.csv
+
