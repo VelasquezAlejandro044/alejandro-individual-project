@@ -11,10 +11,13 @@ Use 143 weeks of data to find a time series model that will allow us to predict 
 Deliverables
 
 # Plan
-Acquire and prepare Walmart sales found on kaggle.com. 
-Analysis based on Time Series modeling and ran through the data pipeline.
-Use vizuals to understand the data and find the best performing Model.
 
+- Use Trello to plan workload
+
+- Acquire and prepare Walmart sales found on kaggle.com. 
+Analysis based on Time Series modeling and ran through the data pipeline.
+
+- Use visuals to understand the data and find the best performing Model.
 
 - Github Repo w/ Final Notebook and README
 - Project summary and writeup for your resume or other professional portfolio pieces
@@ -26,7 +29,7 @@ Use vizuals to understand the data and find the best performing Model.
 <th>Target</th>
 <th>Meaning</th>
 </tr>
-</thead>
+</thead>                                                            
 <tbody>
 <tr>
 <td>Weekly Sales</td>
@@ -38,6 +41,8 @@ Use vizuals to understand the data and find the best performing Model.
 </tbody>
 </table>
 
+## To recreate:
+
 ### Modules
 - wrangle.py
 Functions to acquire, prepare, and split data
@@ -46,4 +51,6 @@ Functions to create visualizations
 - model.py
 It helps with the creation and visualization of models 
 
-### Included Files
+### Data set to recreate 
+https://github.com/VelasquezAlejandro044/alejandro-individual-project/blob/main/Walmart.csv
+
