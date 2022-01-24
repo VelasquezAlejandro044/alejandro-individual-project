@@ -41,6 +41,14 @@ Analysis based on Time Series modeling and ran through the data pipeline.
 </tbody>
 </table>
 
+## Recomendations
+
+- We would want to get a data set that has at least three years worth of data so that we perform other time series analysis  algorithms such as Holts Linear Trend and Previous cycle 
+
+- If I had more time, I would analyze stores individually to see if some of them experience a different type of seasonality 
+
+- Run regression models that will allow how the stores react to gas price changes, temperature, and unemployment
+
 ## To recreate:
 
 ### Modules
